@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purple Glow Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:
+        radial-gradient(circle at 20% 30%, rgba(168,85,247,0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(236,72,153,0.12), transparent 45%),
+        linear-gradient(-45deg,#050008,#12001f,#1a0033,#050008);
+      background-size:400% 400%;
+      animation:bgMove 20s ease infinite;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    @keyframes bgMove{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    nav{
+      position:fixed;
+      top:0;left:0;width:100%;
+      padding:20px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(0,0,0,0.6);
+      backdrop-filter:blur(10px);
+      z-index:100;
+    }
+
+    nav h2{color:#a855f7}
+
+    nav ul{display:flex;gap:30px;list-style:none}
+    nav a{text-decoration:none;color:#fff}
+    nav a:hover{color:#a855f7}
+
+    section{padding:100px 80px}
+    section h2{font-size:40px;color:#a855f7;margin-bottom:50px}
+
+    .skills,
+    .certificates{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+      gap:45px;
+    }
+
+    .skill-box,
+    .certificate{
+      position:relative;
+      min-height:140px;
+      padding:35px 30px;
+      border-radius:30px;
+      background:rgba(15,0,25,0.85);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      box-shadow:
+        0 0 25px rgba(168,85,247,0.45),
+        inset 0 0 25px rgba(168,85,247,0.08);
+    }
+
+    .skill-box::before,
+    .certificate::before{
+      content:"";
+      position:absolute;
+      inset:-3px;
+      border-radius:32px;
+      background:linear-gradient(135deg,#ec4899,#a855f7,#9333ea);
+      z-index:-1;
+    }
+
+    .skill-box img{
+      width:64px;
+      height:64px;
+      margin-bottom:14px;
+      filter:drop-shadow(0 0 12px rgba(168,85,247,.6));
+    }
+
+    .skill-box p{
+      font-size:18px;
+      font-weight:600;
+      letter-spacing:.4px;
+    }
+
+    .certificate{
+      font-size:18px;
+      font-weight:600;
+      line-height:1.5;
+    }
+
+    .skill-box:hover,
+    .certificate:hover{
+      transform:translateY(-8px);
+      transition:.3s ease;
+      box-shadow:0 0 60px #a855f7;
+    }
+
+    footer{
+      padding:40px;
+      text-align:center;
+      background:#06000a;
+      border-top:1px solid rgba(168,85,247,.3)
+    }
+
+    @media(max-width:900px){
+      section{padding:80px 30px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h2>Portfolio</h2>
+  <ul>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+  </ul>
+</nav>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill-box"><img src="https://img.icons8.com/color/96/power-bi.png"><p>Power BI</p></div>
+    <div class="skill-box"><img src="https://img.icons8.com/color/96/tableau-software.png"><p>Tableau</p></div>
+    <div class="skill-box"><img src="https://img.icons8.com/color/96/sql.png"><p>SQL</p></div>
+    <div class="skill-box"><img src="https://img.icons8.com/color/96/python.png"><p>Python</p></div>
+    <div class="skill-box"><img src="https://img.icons8.com/color/96/artificial-intelligence.png"><p>Machine Learning</p></div>
+    <div class="skill-box"><img src="https://img.icons8.com/color/96/hadoop-distributed-file-system.png"><p>HDFS</p></div>
+  </div>
+</section>
+
+<section id="certificates">
+  <h2>Certificates</h2>
+  <div class="certificates">
+    <div class="certificate">Mastering Gen AI and ChatGPT – GeeksforGeeks</div>
+    <div class="certificate">AWS Generative AI Foundations – AWS</div>
+    <div class="certificate">Exploratory Data Analysis – Great Learning</div>
+    <div class="certificate">Google Data Analytics – Great Learning</div>
+    <div class="certificate">TATA Data Analytics Job Simulation – Forage</div>
+  </div>
+</section>
+
+<footer>© 2026 Tarun Kumar E</footer>
+
+</body>
+</html>
